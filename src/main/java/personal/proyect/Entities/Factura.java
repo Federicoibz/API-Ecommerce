@@ -17,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Factura extends Base{
+public class Factura extends Comprobante{
 
     @NotNull
     @Column(name = "fecha_facturacion")

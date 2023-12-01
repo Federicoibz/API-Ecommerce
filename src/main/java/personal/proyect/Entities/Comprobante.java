@@ -17,12 +17,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Comprobante extends Base{
 
-    @Column(name = "fechaFacturacion")
-    private Date fechaFacturacionComprobante;
-
-    @Column(name = "nombreComprobante")
-    private String nombreComprobante;
-
     @NotNull
     @Column(name = "numeroComprobante")
     private String numeroComprobante;
