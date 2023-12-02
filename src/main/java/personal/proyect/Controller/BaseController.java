@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import personal.proyect.Entities.Base;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 
 //interfaz generica
