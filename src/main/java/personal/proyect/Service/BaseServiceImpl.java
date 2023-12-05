@@ -1,8 +1,11 @@
 package personal.proyect.Service;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import personal.proyect.Entities.Base;
 import personal.proyect.Repository.BaseRepository;
 
@@ -10,7 +13,6 @@ import personal.proyect.Repository.BaseRepository;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
-
 public class BaseServiceImpl<E extends Base, ID extends Serializable> implements BaseService<E, ID> {
     //BaseServiceImpl --> implementa la interfaz BaseService (toma los parametros E(tipo entidad) y ID(representando el tipo de indentificador de entidad))
     //extiende o implementa los metodos declarados en BaseService

@@ -12,7 +12,9 @@ import java.util.List;
 
 
 @Service
+
 public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements ClienteService{
+
     @Autowired
     private ClienteRepository clienteRepository;
 
