@@ -2,7 +2,6 @@ package personal.proyect.Controller;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import personal.proyect.Entities.Domicilio;
