@@ -5,4 +5,7 @@ import personal.proyect.Entities.RubroProducto;
 
 @Repository
 public interface RubroProductoRepository extends BaseRepository<RubroProducto,Long>{
+
+    
+
 }
