@@ -21,4 +21,8 @@ public class RubroProducto extends Base{
 
     @Column(name = "nombreCategoriaProducto")
     private String nombreCategoriaProducto;
+
+    @Column(name="activo",
+            nullable = false)
+    private boolean activo;
 }

@@ -30,4 +30,13 @@ public class RubroProductoController extends BaseControllerImpl<RubroProducto, R
         }
     }
 
+    @GetMapping("/getAllActivo")
+    public ResponseEntity<?> findAllActivo() throws Exception {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.findAllActivo());
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
 }

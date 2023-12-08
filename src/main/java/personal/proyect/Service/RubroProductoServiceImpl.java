@@ -29,4 +29,14 @@ public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto, Lon
     public Page<RubroProducto> search(String filtro, Pageable pageable) throws Exception {
         return null;
     }
+
+    @Override
+    public List<RubroProducto> findAllActivo() throws Exception {
+        try {
+            List<RubroProducto> rubroProductos = rubroproductoRepository.findAllActivo();
+            return rubroProductos;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 }

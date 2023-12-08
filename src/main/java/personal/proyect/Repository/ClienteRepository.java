@@ -27,12 +27,12 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long>{
 
     //Anotación
     @Query(
-            value = "SELECT * FROM Cliente WHERE cliente.apellido LIKE %:filtro%",
+            value = "SELECT * FROM Cliente WHERE cliente.nombre LIKE %:filtro% OR cliente.apellido LIKE %:filtro% ",
             nativeQuery = true
     )
     List<Cliente> searchNativo(@Param("filtro") String filtro);
     @Query(
-            value = "SELECT * FROM cliente WHERE cliente.apellido LIKE '%?1%'",
+            value = "SELECT * FROM cliente WHERE cliente.nombre LIKE %:filtro% OR cliente.apellido LIKE %:filtro% ",
             countQuery = "SELECT count(*) FROM cliente",
             nativeQuery = true
     )

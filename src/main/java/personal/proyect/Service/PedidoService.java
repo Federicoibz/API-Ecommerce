@@ -16,7 +16,7 @@ public interface PedidoService extends BaseService<Pedido,Long>{
     Page<Pedido> search(Date filtro, Pageable pageable) throws Exception;
     List<Pedido> pedidoDelivery() throws Exception;
 
-    List<Pedido> searchCajero(String filtroc) throws Exception;
+    List<Pedido> searchCajero(String filtro) throws Exception;
 
     void cambioCajero(Long id,String cambio) throws Exception;
     void entregaCajero(Long id,String cambio) throws Exception;

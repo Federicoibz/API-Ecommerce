@@ -88,9 +88,9 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
     }
 
     @GetMapping("/searchCajero")
-    public ResponseEntity<?> searchCajero(@RequestParam String filtroc){
+    public ResponseEntity<?> searchCajero(@RequestParam String filtro){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchCajero(filtroc));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchCajero(filtro));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }

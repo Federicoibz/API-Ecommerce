@@ -64,9 +64,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
         }
     }
 
-    public List<Pedido> searchCajero(String filtroc ) throws Exception {
+    public List<Pedido> searchCajero(String filtro ) throws Exception {
         try {
-            List<Pedido> pedido = pedidoRepository.searchCajero(filtroc );
+            List<Pedido> pedido = pedidoRepository.searchCajero(filtro );
 
             return pedido;
         } catch (Exception e) {

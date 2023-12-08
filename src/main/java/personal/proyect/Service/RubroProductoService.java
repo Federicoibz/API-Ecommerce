@@ -14,6 +14,8 @@ public interface RubroProductoService extends BaseService<RubroProducto,Long>{
 
     Page<RubroProducto> search(String filtro, Pageable pageable) throws Exception;
 
+    List<RubroProducto> findAllActivo()throws Exception;
+
 }
 
 
