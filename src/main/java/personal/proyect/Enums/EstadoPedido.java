@@ -7,5 +7,5 @@ public enum EstadoPedido {
     A_CONFIRMAR,
     EN_CAMINO ,
     CANCELADO ,
-    COMPLETADO ;
+    COMPLETADO
 }
