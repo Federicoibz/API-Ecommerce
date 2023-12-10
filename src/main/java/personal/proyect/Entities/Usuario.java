@@ -7,7 +7,6 @@ import personal.proyect.Enums.Rol;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
 @Table(name = "Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"username", "email"})})
