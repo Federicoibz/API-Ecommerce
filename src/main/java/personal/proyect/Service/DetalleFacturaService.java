@@ -3,7 +3,6 @@ package personal.proyect.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import personal.proyect.Entities.Comprobante;
 import personal.proyect.Entities.DetalleFactura;
 
 import java.util.List;

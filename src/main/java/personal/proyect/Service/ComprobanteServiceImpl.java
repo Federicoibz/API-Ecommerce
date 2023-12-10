@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import personal.proyect.Entities.Comprobante;
 import personal.proyect.Repository.BaseRepository;
 import personal.proyect.Repository.ComprobanteRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante,Long> implements ComprobanteService{

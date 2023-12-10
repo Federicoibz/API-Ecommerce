@@ -15,7 +15,7 @@ public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto, Lon
 
     @Autowired
     private RubroProductoRepository rubroproductoRepository;
-    public RubroProductoServiceImpl(BaseRepository<RubroProducto, Long> baseRepository, RubroProductoRepository rubroproductoaRepository) {
+    public RubroProductoServiceImpl(BaseRepository<RubroProducto, Long> baseRepository, RubroProductoRepository rubroproductoRepository) {
         super(baseRepository);
         this.rubroproductoRepository = rubroproductoRepository;
     }

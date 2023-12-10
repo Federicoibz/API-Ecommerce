@@ -8,8 +8,6 @@ import personal.proyect.Entities.Ingrediente;
 import personal.proyect.Repository.BaseRepository;
 import personal.proyect.Repository.IngredienteRepository;
 
-import java.util.List;
-
 @Service
 public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente, Long> implements IngredienteService {
 

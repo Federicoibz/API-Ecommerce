@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public interface ProductoService extends BaseService<Producto,Long>{
 
-    public List<Producto> search (String filtro) throws Exception;
+    List<Producto> search (String filtro) throws Exception;
     Page<Producto> searchByNombre(String filtro, Pageable pageable) throws Exception;
 
     Page<Producto> searchByPrecioVenta(BigDecimal precioVenta, Pageable pageable) throws Exception;

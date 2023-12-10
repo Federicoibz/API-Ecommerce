@@ -7,7 +7,6 @@ import com.tngtech.archunit.lang.ArchRule;
 import jakarta.persistence.Entity;
 import personal.proyect.Controller.BaseController;
 import personal.proyect.Service.BaseService;
-import personal.proyect.Service.BaseServiceImpl;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;

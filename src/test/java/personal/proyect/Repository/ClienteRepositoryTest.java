@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import personal.proyect.Entities.Cliente;
-import personal.proyect.Repository.ClienteRepository;
 
 import java.util.ArrayList;
 import java.util.List;
