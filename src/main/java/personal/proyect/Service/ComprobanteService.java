@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface ComprobanteService extends BaseService<Comprobante,Long>{
 
-    List<Comprobante> search(int filtro) throws Exception;
+    List<Comprobante> search(String filtro) throws Exception;
 
-    Page<Comprobante> search(int filtro, Pageable pageable) throws Exception;
+    Page<Comprobante> search(String filtro, Pageable pageable) throws Exception;
 }

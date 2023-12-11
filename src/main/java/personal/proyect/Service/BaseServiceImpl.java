@@ -45,8 +45,7 @@ public class BaseServiceImpl<E extends Base, ID extends Serializable> implements
     @Transactional
     public Page<E> findAll(Pageable pageable) throws Exception {
         try {
-            Page<E> entities = baseRepository.findAll(pageable);
-            return entities;
+            return baseRepository.findAll(pageable);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

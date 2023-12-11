@@ -19,9 +19,9 @@ public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante,Long> im
     }
 
     @Override
-    public List<Comprobante> search(int filtro) throws Exception {
+    public List<Comprobante> search(String filtro) throws Exception {
         try {
-            List<Comprobante> comprobantes = comprobanteRepository.searchNativo(filtro);
+            List<Comprobante> comprobantes = comprobanteRepository.search(filtro);
 
             return comprobantes;
         } catch (Exception e) {
@@ -30,9 +30,9 @@ public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante,Long> im
     }
 
     @Override
-    public Page<Comprobante> search(int filtro, Pageable pageable) throws Exception{
+    public Page<Comprobante> search(String filtro, Pageable pageable) throws Exception{
         try {
-            Page<Comprobante> comprobantes = comprobanteRepository.searchNativo(filtro, pageable);
+            Page<Comprobante> comprobantes = comprobanteRepository.search(filtro, pageable);
             return comprobantes;
         }catch (Exception e){
             throw new Exception(e.getMessage());

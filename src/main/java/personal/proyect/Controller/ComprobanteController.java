@@ -13,7 +13,7 @@ import personal.proyect.Service.ComprobanteServiceImpl;
 public class ComprobanteController extends BaseControllerImpl<Comprobante, ComprobanteServiceImpl>{
 
     @GetMapping(path = "/search")
-        public ResponseEntity<?> searchNativo(@RequestParam int filtro) {
+        public ResponseEntity<?> searchNativo(@RequestParam String filtro) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
         } catch (Exception e) {
@@ -21,7 +21,7 @@ public class ComprobanteController extends BaseControllerImpl<Comprobante, Compr
         }
     }
         @GetMapping("/searchPaged")
-        public ResponseEntity<?> search(@RequestParam int filtro, Pageable pageable) {
+        public ResponseEntity<?> search(@RequestParam String filtro, Pageable pageable) {
             try {
                 return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro, pageable));
             } catch (Exception e) {

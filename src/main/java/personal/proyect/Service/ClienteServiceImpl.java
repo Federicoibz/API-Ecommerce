@@ -49,8 +49,4 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
         }
     }
 
-    @Override
-    public List<Cliente> findAll() throws Exception {
-        return null;
-    }
 }
