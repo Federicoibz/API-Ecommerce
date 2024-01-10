@@ -20,16 +20,6 @@ public class OrdenCompraServiceImpl extends BaseServiceImpl<OrdenCompra,Long> im
     }
 
     @Override
-    public List<OrdenCompra> searchNativo(int filtro) throws Exception {
-        try {
-            List<OrdenCompra> ordenCompras = ordencompraRepository.searchNativo(filtro);
-            return ordenCompras;
-        }catch (Exception e){
-            throw new Exception(e.getMessage());
-        }
-    }
-
-    @Override
     public Page<OrdenCompra> searchNativo(int filtro, Pageable pageable) throws Exception {
         try {
             Page<OrdenCompra> ordenCompras = ordencompraRepository.searchNativo(filtro,pageable);

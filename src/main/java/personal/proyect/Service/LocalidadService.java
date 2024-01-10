@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface LocalidadService extends BaseService<Localidad,Long> {
 
-    List<Localidad> search(String filtro)throws Exception;
+    Page<Localidad> searchCP(int filtro,Pageable pageable) throws Exception;
 
-    Page<Localidad> search(String filtro, Pageable pageable)throws Exception;
+    Page<Localidad> searchNombre(String filtro, Pageable pageable)throws Exception;
 }

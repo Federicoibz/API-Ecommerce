@@ -15,7 +15,7 @@ public interface FacturaService extends BaseService<Factura,Long> {
 
     Page<Factura> searchRango(Date fechaInicio, Date fechaFin, Pageable pageable)throws Exception;
 
-    List<Factura> search(Date fechaFacturacion) throws Exception;
+    List<Factura> searchFacturaByFechaFacturacion(Date fechaFacturacion) throws Exception;
 
-    Page<Factura> search(Date fechaFacturacion,Pageable pageable) throws Exception;
+    Page<Factura> searchFacturaByFechaFacturacion(Date fechaFacturacion,Pageable pageable) throws Exception;
 }

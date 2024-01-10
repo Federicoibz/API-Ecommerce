@@ -19,9 +19,9 @@ public class DetalleOrdenCompraServiceImpl extends BaseServiceImpl<DetalleOrdenC
     }
 
     @Override
-    public List<DetalleOrdenCompra> search(int filtro) throws Exception {
+    public Page<DetalleOrdenCompra> searchSubtotal(int filtro, Pageable pageable) throws Exception {
         try {
-            List<DetalleOrdenCompra> detalleOrdenCompras = detalleordencompraRepository.searchNativo(filtro);
+            Page<DetalleOrdenCompra> detalleOrdenCompras = detalleordencompraRepository.searchSubtotal(filtro, pageable);
             return detalleOrdenCompras;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -29,9 +29,9 @@ public class DetalleOrdenCompraServiceImpl extends BaseServiceImpl<DetalleOrdenC
     }
 
     @Override
-    public Page<DetalleOrdenCompra> search(int filtro, Pageable pageable) throws Exception {
+    public Page<DetalleOrdenCompra> searchCantidad(int filtro, Pageable pageable) throws Exception {
         try {
-            Page<DetalleOrdenCompra> detalleOrdenCompras = detalleordencompraRepository.searchNativo(filtro,pageable);
+            Page<DetalleOrdenCompra> detalleOrdenCompras = detalleordencompraRepository.searchCantidad(filtro,pageable);
             return detalleOrdenCompras;
         }catch (Exception e){
             throw new Exception(e.getMessage());

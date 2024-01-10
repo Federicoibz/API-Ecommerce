@@ -18,8 +18,8 @@ import java.math.BigDecimal;
 public class Ingrediente extends Base{
 
     @NotNull
-    @Column(name = "denominacion")
-    private String denominacion;
+    @Column(name = "nombre_ingrediente")
+    private String nombreIngrediente;
 
     @Column(name = "url_imagen")
     private String urlImagen;

@@ -16,12 +16,12 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class Domicilio extends Base{
 
     @NotNull
-    @Column(name = "calle", length = 500)
-    private String calle;
+    @Column(name = "nombreCalle", length = 500)
+    private String nombreCalle;
 
     @NotNull
-    @Column(name = "numero", precision = 5)
-    private Integer numero;
+    @Column(name = "numeroCalle", precision = 5)
+    private Integer numeroCalle;
 
     @Column(name = "numero_vivienda")
     private Integer numeroDpto;

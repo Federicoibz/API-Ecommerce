@@ -6,33 +6,21 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import personal.proyect.Entities.Localidad;
 
-import java.util.List;
-
 @Repository
 public interface LocalidadRepository extends BaseRepository<Localidad,Long>{
 
-    List<Localidad> findByNombreLocalidadContaining(String nombreLocalidad);
-
-    Page<Localidad> findByNombreLocalidadContaining(String nombreLocalidad, Pageable pageable);
-
-    //Anotación JPQL parametros indexados
-    @Query(value = "SELECT l FROM Localidad l WHERE l.nombreLocalidad LIKE '%?1%'")
-    List<Localidad> search(String filtro);
-    @Query(value = "SELECT l FROM Localidad l WHERE l.nombreLocalidad LIKE '%?1%'")
-    Page<Localidad> search(String filtro, Pageable pageable);
-
     //Anotación
     @Query(
-            value = "SELECT * FROM localidad WHERE localidad.nombreLocalidad LIKE '%?1%'",
+            value = "SELECT * FROM localidad WHERE codigo_Postal = :filtro",
             nativeQuery = true
     )
-    List<Localidad> searchNativo(String filtro);
+    Page<Localidad> searchCP(int filtro,Pageable pageable);
     @Query(
-            value = "SELECT * FROM localidad WHERE localidad.nombreLocalidad LIKE '%?1%'",
+            value = "SELECT * FROM localidad WHERE nombre_Localidad LIKE %:filtro%",
             countQuery = "SELECT count(*) FROM localidad",
             nativeQuery = true
     )
-    Page<Localidad> searchNativo(String filtro, Pageable pageable);
+    Page<Localidad> searchNombre(String filtro, Pageable pageable);
 
 
 

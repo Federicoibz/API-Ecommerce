@@ -22,7 +22,7 @@ public class NotaCredito extends Comprobante  {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNotaCredito;
 
-    @Column(name = "Importe")
+    @Column(name = "ImporteNC")
     private double importeNC;
 
     @Column(name = "Descripción")

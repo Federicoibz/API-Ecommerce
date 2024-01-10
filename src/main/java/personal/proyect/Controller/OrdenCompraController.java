@@ -12,14 +12,6 @@ import personal.proyect.Service.OrdenCompraServiceImpl;
 @RequestMapping(path = "api/v1/u.ca/OrdenCompra")
 public class OrdenCompraController extends BaseControllerImpl<OrdenCompra, OrdenCompraServiceImpl>{
 
-    @GetMapping(path = "/search")
-    public ResponseEntity<?> searchNativo(@RequestParam int filtro) {
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchNativo(filtro));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
-        }
-    }
     @GetMapping("/searchPaged")
     public ResponseEntity<?> search(@RequestParam int filtro, Pageable pageable) {
         try {

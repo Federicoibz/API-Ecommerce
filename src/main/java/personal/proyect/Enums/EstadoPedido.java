@@ -3,7 +3,7 @@ package personal.proyect.Enums;
 public enum EstadoPedido {
 
     PREPARACION ,
-    LISTO ,
+    LISTO,
     A_CONFIRMAR,
     EN_CAMINO ,
     CANCELADO ,

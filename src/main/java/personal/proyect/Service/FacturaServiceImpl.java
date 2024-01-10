@@ -42,9 +42,9 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
     }
 
     @Override
-    public List<Factura> search(Date fechaFacturacion) throws Exception {
+    public List<Factura> searchFacturaByFechaFacturacion(Date fechaFacturacion) throws Exception {
         try {
-            List<Factura> facturas = facturaRepository.search(fechaFacturacion);
+            List<Factura> facturas = facturaRepository.searchFacturaByFechaFacturacion(fechaFacturacion);
             return facturas;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -52,9 +52,9 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
     }
 
     @Override
-    public Page<Factura> search(Date fechaFacturacion,Pageable pageable) throws Exception {
+    public Page<Factura> searchFacturaByFechaFacturacion(Date fechaFacturacion,Pageable pageable) throws Exception {
         try {
-            Page<Factura> facturas = facturaRepository.search(fechaFacturacion,pageable);
+            Page<Factura> facturas = facturaRepository.searchFacturaByFechaFacturacion(fechaFacturacion,pageable);
             return facturas;
         }catch (Exception e){
             throw new Exception(e.getMessage());

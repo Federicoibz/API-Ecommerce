@@ -21,16 +21,6 @@ public class IngredienteRecetaServiceImpl extends BaseServiceImpl<IngredienteRec
     }
 
     @Override
-    public List<IngredienteReceta> search(int filtro) throws Exception {
-        try{
-            List<IngredienteReceta> ingredienteRecetas = ingredienterecetaRepository.searchNativo(filtro);
-            return ingredienteRecetas;
-        }catch (Exception e){
-            throw new Exception(e.getMessage());
-        }
-    }
-
-    @Override
     public Page<IngredienteReceta> search(int filtro, Pageable pageable) throws Exception {
         try {
             Page<IngredienteReceta> ingredienteRecetas = ingredienterecetaRepository.searchNativo(filtro, pageable);

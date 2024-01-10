@@ -15,7 +15,8 @@ import java.util.Date;
 public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl>{
 
     @GetMapping(path = "/search")
-    public ResponseEntity<?> search(@RequestParam Date fechaInicio,@RequestParam Date fechaFin) throws Exception{
+    public ResponseEntity<?> search( @RequestParam Date fechaInicio,
+                                     @RequestParam Date fechaFin) throws Exception{
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.searchRango(fechaInicio,fechaFin));
         }catch (Exception e){
@@ -27,6 +28,24 @@ public class FacturaController extends BaseControllerImpl<Factura, FacturaServic
     public ResponseEntity<?> search(@RequestParam Date fechaInicio,@RequestParam Date fechaFin, Pageable pageable) throws Exception{
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.searchRango(fechaInicio,fechaFin,pageable));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
+        }
+    }
+
+    @GetMapping(path = "/searchbyFecha")
+    public ResponseEntity<?> search( @RequestParam Date fechaFacturacion) throws Exception{
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchFacturaByFechaFacturacion(fechaFacturacion));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
+        }
+    }
+
+    @GetMapping(path = "/searchbyFechaPaged")
+    public ResponseEntity<?> search( @RequestParam Date fechaFacturacion, Pageable pageable) throws Exception{
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchFacturaByFechaFacturacion(fechaFacturacion,pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
         }

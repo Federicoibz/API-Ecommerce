@@ -12,19 +12,19 @@ import personal.proyect.Service.LocalidadServiceImpl;
 @RequestMapping(path = "api/v1/u.ca/Localidad")
 public class LocalidadController extends  BaseControllerImpl<Localidad, LocalidadServiceImpl>{
 
-    @GetMapping(path = "/search")
-    public ResponseEntity<?> searchNativo(@RequestParam String filtro){
+    @GetMapping(path = "/searchCPPaged")
+    public ResponseEntity<?> searchCP(@RequestParam int filtro, Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchCP(filtro,pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
 
-    @GetMapping(path = "/searchPaged")
-    public ResponseEntity<?> searchNativo(@RequestParam String filtro, Pageable pageable){
+    @GetMapping(path = "/searchNombrePaged")
+    public ResponseEntity<?> searchNombre(@RequestParam String filtro, Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchNombre(filtro,pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
         }

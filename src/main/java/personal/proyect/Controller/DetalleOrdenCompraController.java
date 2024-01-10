@@ -15,19 +15,19 @@ import personal.proyect.Service.DetalleOrdenCompraServiceImpl;
 @RequestMapping(path = "api/v1/u.ca/DetalleOrdenCompra")
 public class DetalleOrdenCompraController extends BaseControllerImpl<DetalleOrdenCompra, DetalleOrdenCompraServiceImpl>{
 
-    @GetMapping(path = "/search")
-    public ResponseEntity<?> search(int filtro)throws Exception{
+    @GetMapping(path = "/searchSubtotal")
+    public ResponseEntity<?> searchSubtotal(int filtro,Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchSubtotal(filtro,pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
 
-    @GetMapping(path = "/searchPaged")
-    public ResponseEntity<?> search(int filtro, Pageable pageable) throws Exception{
+    @GetMapping(path = "/searchCantidad")
+    public ResponseEntity<?> searchCantidad(int filtro, Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro, pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchCantidad(filtro, pageable));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
         }

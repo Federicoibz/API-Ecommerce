@@ -8,8 +8,6 @@ import personal.proyect.Entities.Localidad;
 import personal.proyect.Repository.BaseRepository;
 import personal.proyect.Repository.LocalidadRepository;
 
-import java.util.List;
-
 @Service
 public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> implements LocalidadService {
 
@@ -21,9 +19,9 @@ public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> imple
     }
 
     @Override
-    public List<Localidad> search(String filtro) throws Exception {
+    public Page<Localidad> searchCP(int filtro,Pageable pageable) throws Exception {
         try {
-            List<Localidad> localidades = localidadRepository.searchNativo(filtro);
+            Page<Localidad> localidades = localidadRepository.searchCP(filtro,pageable);
             return localidades;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -31,9 +29,9 @@ public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> imple
     }
 
     @Override
-    public Page<Localidad> search(String filtro, Pageable pageable) throws Exception {
+    public Page<Localidad> searchNombre(String filtro, Pageable pageable) throws Exception {
         try {
-            Page<Localidad> localidades = localidadRepository.searchNativo(filtro,pageable);
+            Page<Localidad> localidades = localidadRepository.searchNombre(filtro,pageable);
             return localidades;
         }catch (Exception e){
             throw new Exception(e.getMessage());

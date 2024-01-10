@@ -15,15 +15,6 @@ import personal.proyect.Service.IngredienteRecetaServiceImpl;
 @RequestMapping(path = "api/v1/u.ca/IngredienteReceta")
 public class IngredienteRecetaController extends BaseControllerImpl<IngredienteReceta, IngredienteRecetaServiceImpl> {
 
-    @GetMapping(path = "/search")
-    public ResponseEntity<?> search(int filtro)throws Exception{
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\": \"" + e.getMessage() + "\"}");
-        }
-    }
-
     @GetMapping(path = "/searchPaged")
     public ResponseEntity<?> search(int filtro, Pageable pageable) throws Exception{
         try {

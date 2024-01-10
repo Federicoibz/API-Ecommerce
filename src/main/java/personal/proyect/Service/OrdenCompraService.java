@@ -10,8 +10,6 @@ import java.util.List;
 @Service
 public interface OrdenCompraService extends BaseService<OrdenCompra,Long>{
 
-    List<OrdenCompra> searchNativo(int filtro)throws Exception;
-
     Page<OrdenCompra> searchNativo(int filtro, Pageable pageable)throws Exception;
 
 }

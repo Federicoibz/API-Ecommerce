@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface DetalleOrdenCompraService extends BaseService<DetalleOrdenCompra,Long>{
 
-    List<DetalleOrdenCompra> search(int filtro) throws Exception;
+    Page<DetalleOrdenCompra> searchCantidad(int filtro,Pageable pageable) throws Exception;
 
-    Page<DetalleOrdenCompra> search(int filtro,Pageable pageable) throws Exception;
+    Page<DetalleOrdenCompra> searchSubtotal(int filtro,Pageable pageable) throws Exception;
 }

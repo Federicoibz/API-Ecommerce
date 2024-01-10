@@ -10,21 +10,24 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "NotaCredito")
+@Table(name = "OrdenCompra")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public class OrdenCompra extends Comprobante{
 
     @NotNull
-    @Column(name = "Fecha_Nota_Credito")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaNotaCredito;
+    @Column(name = "fechaHoraOrdenCompra")
+    private Date fechaHoraOrdenCompra;
 
-    @Column(name = "Importe")
-    private double importeNC;
+    @NotNull
+    @Column(name = "montoTotalOrdenCompra")
+    private double montoTotalOrdenCompra;
 
-    @Column(name = "Descripción")
-    private String descripcionNC;
+    @NotNull
+    @Column(name = "numOrdenCompra")
+    private int numOrdenCompra;
 }

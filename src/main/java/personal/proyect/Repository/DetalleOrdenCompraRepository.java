@@ -11,22 +11,14 @@ import java.util.List;
 @Repository
 public interface DetalleOrdenCompraRepository extends BaseRepository<DetalleOrdenCompra,Long>{
 
-    @Query(value = "SELECT d from DetalleOrdenCompra d WHERE d.cantidadDetalleOrdenCompra = :filtro")
-    List<DetalleOrdenCompra> search(int filtro);
-
-    @Query(value = "SELECT d from DetalleOrdenCompra d WHERE d.cantidadDetalleOrdenCompra = :filtro")
-    Page<DetalleOrdenCompra> search(int filtro, Pageable pageable);
+    @Query(value = "SELECT * from DetalleOrdenCompra WHERE cantidadDetalleOrdenCompra = :filtro",
+            nativeQuery = true)
+    Page<DetalleOrdenCompra> searchCantidad(int filtro, Pageable pageable);
 
     @Query(
-            value = "SELECT * FROM detalleOrdenCompra WHERE detalleOrdencompra.subtotal LIKE '%?1%'",
+            value = "SELECT * FROM detalleOrdenCompra WHERE detalleOrdencompra.subtotal = :filtro",
             nativeQuery = true
     )
-    List<DetalleOrdenCompra> searchNativo(int filtro);
-
-    @Query(
-            value = "SELECT * FROM detalleOrdenCompra WHERE detalleOrdencompra.subtotal LIKE '%?1%'",
-            nativeQuery = true
-    )
-    Page<DetalleOrdenCompra> searchNativo(int filtro, Pageable pageable);
+    Page<DetalleOrdenCompra> searchSubtotal(int filtro, Pageable pageable);
 
 }

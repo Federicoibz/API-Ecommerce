@@ -11,19 +11,19 @@ import java.util.List;
 @Repository
 public interface DomicilioRepository extends BaseRepository<Domicilio,Long>{
 
-    @Query(value = "select d from Domicilio d WHERE d.calle LIKE '%?1%'")
+    @Query(value = "select d from Domicilio d WHERE d.nombreCalle LIKE %:filtro%")
     List<Domicilio> search(String filtro);
 
-    @Query(value = "select d from Domicilio d WHERE d.calle LIKE '%?1%'")
+    @Query(value = "select d from Domicilio d WHERE d.nombreCalle LIKE %:filtro%")
     Page<Domicilio> search(String filtro, Pageable pageable);
 
     @Query(
-            value = "select * from Domicilio WHERE calle like '%1%'",
+            value = "select * from Domicilio WHERE nombreCalle like '%1%'",
             nativeQuery = true
     )List<Domicilio> searchNativo(String filtro);
 
     @Query(
-            value = "select * from Domicilio WHERE calle like '%1%'",
+            value = "select * from Domicilio WHERE nombreCalle like '%1%'",
             nativeQuery = true
     )Page<Domicilio> searchNativo(String filtro,Pageable pageable);
 

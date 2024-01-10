@@ -10,7 +10,5 @@ import java.util.List;
 @Service
 public interface IngredienteRecetaService extends BaseService<IngredienteReceta,Long>{
 
-    List<IngredienteReceta> search(int filtro) throws Exception;
-
     Page<IngredienteReceta> search(int filtro, Pageable pageable) throws Exception;
 }
